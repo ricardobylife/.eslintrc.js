@@ -1,37 +1,26 @@
-// npm i eslint babel-eslint prettier eslint-config-prettier eslint-plugin-prettier
 module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'prettier',
-    'prettier/react',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
+    ecmaVersion: 11,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'prettier',
-    'react-hooks'
-  ],
+  plugins: ['@typescript-eslint'],
   rules: {
-    'prettier/prettier': 'error',
-    'react/jsx-one-expression-per-line': 0,
-    'react/jsx-filename-extension': 0,
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    '@typescript-eslint/no-empty-function': 'off',
   },
-};
+}
